@@ -1,42 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Game!</title>
-</head>
-<body>
-    <script>
-        var gameOver = false;
-        var RIGHT = 39;
-        var LEFT = 37;
-        var UP = 38;
-        var DOWN = 40;
+<html>
+	<head>
+		<title>JavaScript - Move Object with Arrow Keys using JavaScript Function.</title>
+		<script type="text/javascript">
+			//init object globally
+			var objImage= null;
+			function init(){
+				objImage=document.getElementById("image1");				
+				objImage.style.position='relative';
+				objImage.style.left='0px';
+				objImage.style.top='0px';
+                objImage.setAttribute("width", "80");
+            	objImage.setAttribute("height", "75");
+			}
+            funciotn init2{
+            	obstacle=document.getElementById("image2");
+                objImage.style.position='relative';
+				objImage.style.left='0px';
+				objImage.style.top='0px';
+                objImage.setAttribute("width", "80");
+            	objImage.setAttribute("height", "75");
+                
+			function getKeyAndMove(e){				
+				var key_code=e.which||e.keyCode;
+				switch(key_code){
+					case 37: //left arrow key
+						moveLeft();
+						break;
+					case 38: //Up arrow key
+						moveUp();
+						break;
+					case 39: //right arrow key
+						moveRight();
+						break;
+					case 40: //down arrow key
+						moveDown();
+						break;						
+				}
+			}
+			function moveLeft(){
+				objImage.style.left=parseInt(objImage.style.left)-5 +'px';
+			}
+			function moveUp(){
+				objImage.style.top=parseInt(objImage.style.top)-5 +'px';
+			}
+			function moveRight(){
+				objImage.style.left=parseInt(objImage.style.left)+5 +'px';
+			}
+			function moveDown(){
+				objImage.style.top=parseInt(objImage.style.top)+5 +'px';
+			}
+			window.onload=init;
+		</script>
+	</head>
 
-        function makeObj(){
-            var x = document.createElement("IMG");
-            x.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sphere-with-blender.png");
-            x.setAttribute("width", "75");
-            x.setAttribute("height", "75");
-        }
-
-        function makeObstacle(){
-            var x = document.createElement("IMG");
-            x.setAttribute("src", "http://www.clipartbest.com/cliparts/4T9/azr/4T9azrXqc.pngg");
-            x.setAttribute("width", "75");
-            x.setAttribute("height", "75");
-        }
-
-        function leftArrowPressed(){
-        }
-        function ArrowPressed(){
-        }
-        function ArrowPressed(){
-        }
-        function ArrowPressed(){
-        }
-        function Question(question, answer){}
-
-
-    </script>
-</body>
+	<body onkeydown='getKeyAndMove(event)' background="http://static1.squarespace.com/static/5852eb51e4fcb548e8e909e4/t/586ba7c91b631b210f738df2/1483450335675/Background+Grid.png">
+		<h2><font color="white">Use Arrow keys to move object left, top, right and down.</font></h2>
+		<img id="image1" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Sphere-with-blender.png" alt="includehelp.com"/>
+	</body>
 </html>
