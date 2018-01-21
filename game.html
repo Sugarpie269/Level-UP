@@ -96,7 +96,11 @@
              objImage.speed=objImage.speed+1;
             }
             function SpeedDown(){
+             if(objImage.speed>1){
              objImage.speed=objImage.speed-1;
+             }
+             else 
+             	objImage.speed=0;
             }
 			window.onload=init;
             
