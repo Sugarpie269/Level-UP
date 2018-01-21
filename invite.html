@@ -70,7 +70,7 @@
   </tr>
   <tr>
     <td>
-      <button id="myBtn">Accccccccept</button>
+      <button id="myBtn">Accept</button>
       <input type="button" value="Decline" onclick="deleteRow(this)">
     </td>
   </tr>
@@ -97,14 +97,15 @@
 
 <script>
 function deleteRow(r) {
-     var p=r.parentNode.parentNode;
-         p.parentNode.removeChild(p);
-    }
+  var p=r.parentNode.parentNode;
+  p.parentNode.removeChild(p);
+}
+function openDialog(btn){
+  var btn = document.getElementById("myBtn");
+}
 // Get the modal
 var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
