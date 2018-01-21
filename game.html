@@ -11,14 +11,15 @@
 				objImage.style.top='0px';
                 objImage.setAttribute("width", "80");
             	objImage.setAttribute("height", "75");
+                objImage.speed= 0;
 			}
-            funciotn init2{
+            /*function init2(){
             	obstacle=document.getElementById("image2");
                 objImage.style.position='relative';
 				objImage.style.left='0px';
 				objImage.style.top='0px';
                 objImage.setAttribute("width", "80");
-            	objImage.setAttribute("height", "75");
+            	objImage.setAttribute("height", "75");*/
                 
 			function getKeyAndMove(e){				
 				var key_code=e.which||e.keyCode;
@@ -34,27 +35,48 @@
 						break;
 					case 40: //down arrow key
 						moveDown();
-						break;						
+						break;
+                    case 13: SpeedUp();
+                    		 break;
+                             
+                    case 16: SpeedDown();
+                    		 break;
 				}
 			}
+      
+               
+            
 			function moveLeft(){
-				objImage.style.left=parseInt(objImage.style.left)-5 +'px';
+				objImage.style.left=parseInt(objImage.style.left)-(5+objImage.speed) +'px';
+                
+                
 			}
 			function moveUp(){
-				objImage.style.top=parseInt(objImage.style.top)-5 +'px';
+				objImage.style.top=parseInt(objImage.style.top)-(5+objImage.speed) +'px';
+                
+                
 			}
 			function moveRight(){
-				objImage.style.left=parseInt(objImage.style.left)+5 +'px';
+				objImage.style.left=parseInt(objImage.style.left)+(5+objImage.speed) +'px';
+                
 			}
 			function moveDown(){
-				objImage.style.top=parseInt(objImage.style.top)+5 +'px';
+				objImage.style.top=parseInt(objImage.style.top)+(5+objImage.speed) +'px';
+              
+               
 			}
+            function SpeedUp(){
+             objImage.speed=objImage.speed+1;
+            }
+            function SpeedDown(){
+             objImage.speed=objImage.speed-1;
+            }
 			window.onload=init;
 		</script>
 	</head>
 
 	<body onkeydown='getKeyAndMove(event)' background="http://static1.squarespace.com/static/5852eb51e4fcb548e8e909e4/t/586ba7c91b631b210f738df2/1483450335675/Background+Grid.png">
-		<h2><font color="white">Use Arrow keys to move object left, top, right and down.</font></h2>
+		<h2><font color="white">Use Arrow keys to move object left, top, right and down. To increase speed press enter and to slow down press shift</font></h2>
 		<img id="image1" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Sphere-with-blender.png" alt="includehelp.com"/>
 	</body>
 </html>
