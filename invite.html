@@ -3,6 +3,19 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+.bgimg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('http://www.lettersmarket.com/uploads/lettersmarket/demo/background_gradient_basic/background_gradient_blue_07/background_gradient_blue_07_jpg_max.jpg');
+    min-height: 100%;
+}
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -44,26 +57,49 @@
 </style>
 </head>
 <body>
-
 <h1>Invitations</h1>
+<p>You have invitations from</p>
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Reply</button>
+<table style="width:100%">
+  <tr>
+    <td>
+      <input type="button" id="myBtn" value="Accept" onclick="deleteRow(this)">
+      <input type="button" value="Decline" onclick="deleteRow(this)">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button id="myBtn">Accccccccept</button>
+      <input type="button" value="Decline" onclick="deleteRow(this)">
+    </td>
+  </tr>
+</table>
+
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
+     <!-- Modal content -->
+<div class="modal-content">
+  <div class="modal-header">
     <span class="close">&times;</span>
-    <p>Connect with such and such?</p>
-    <a href="accept">Accept</a>
-    <a>Decline</a>
+    <h2>Modal Header</h2>
+  </div>
+  <div class="modal-body">
+    <p>You are now connected with John for Calculus.</p>
+  </div>
+</div>
+
   </div>
 
 </div>
 
 <script>
+function deleteRow(r) {
+     var p=r.parentNode.parentNode;
+         p.parentNode.removeChild(p);
+    }
 // Get the modal
 var modal = document.getElementById('myModal');
 
