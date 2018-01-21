@@ -1,17 +1,101 @@
 <!DOCTYPE html>
 <html>
+ <head>
+<script>
+    var count = 0;
+    function setColor(btn) {
+        var property = document.getElementById(btn);
+        if (count <2){
+	count++;
+	}
+	else{
+		property.style.backgroundColor = "19FE0F";
+		count = 0;
+        }
+    }
+    
+
+    function checkBox(){
+	var x = document.getElementById("completed");
+	x.checked = true;
+    }
+	
+</script>
+<link rel="stylesheet" type="text/css" href="page2.css">
+</head> 
 <ul> 
 	<li><a
 	href="">Home
 	</a></li> 
 </ul>
-<body bgcolor = "#B3EDE7">
-<h1> Level UP</h1>
-<h2> Click on the topics that you already know and double-click on the areas of 
-math to make all the subtopics turn green.</h2>
+<style>
+body{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('http://www.lettersmarket.com/uploads/lettersmarket/demo/background_gradient_basic/background_gradient_blue_07/background_gradient_blue_07_jpg_max.jpg');
+    min-height: 100%;
+	}
+</style>
+<title> Level UP</title>
+<h1>Level UP </h1>
+<h> Click on the topics that you already know and double-click on the areas of 
+math to make all the subtopics turn green.</h> 
 
-<button type="button">Pre-Algebra</button>
-<button type="button">Algebra</button>
+<p></p>
+
+<div class="dropdown">
+  <button class="dropbtn"> Pre-Algebra</button>
+  <div class="dropdown-content">
+    <a href="#">1.1<input type="checkbox" id = "completed"></a> 
+    <a href="#">1.2<input type="checkbox" id = "completed"></a> 
+    <a href="#">1.3<input type="checkbox" id = "completed"></a> 
+  </div>
+</div> 
+
+ <div class="dropdown">
+  <button class="dropbtn">Algebra</button>
+  <div class="dropdown-content">
+    <a href="#">1.1 Systems of Equations<input type="checkbox" id = "completed"></a>
+    <a href="#">1.2 Exponents<input type="checkbox" id = "completed"></a>
+    <a href="#">1.3 Logarithms<input type="checkbox" id = "completed"></a>
+  </div>
+</div> 
+ <div class="dropdown">
+  <button class="dropbtn">Geometry</button>
+  <div class="dropdown-content">
+    <a href="#">1.1<input type="checkbox" id = "completed"></a>
+    <a href="#">1.2<input type="checkbox" id = "completed"></a>
+    <a href="#">1.3<input type="checkbox" id = "completed"></a>
+  </div>
+</div> 
+
+ <div class="dropdown">
+  <button class="dropbtn">Precalc</button>
+  <div class="dropdown-content">
+    <a href="#">1.1<input type="checkbox" id = "completed"></a>
+    <a href="#">1.2<input type="checkbox" id = "completed"></a>
+    <a href="#">1.3<input type="checkbox" id = "completed"></a>
+  </div>
+</div> 
+
+ <div class="dropdown">
+  <button class="dropbtn">Trigonometry</button>
+  <div class="dropdown-content">
+    <a href="#">1.1<input type="checkbox" id = "completed"></a>
+    <a href="#">1.2<input type="checkbox" id = "completed"></a>
+    <a href="#">1.3<input type="checkbox" id = "completed"></a>
+  </div>
+</div> 
+
+ <div class="dropdown">
+  <button class="dropbtn">Calculus</button>
+  <div class="dropdown-content">
+    <a href="#">1.1<input type="checkbox" id = "completed"></a>
+    <a href="#">1.2<input type="checkbox" id = "completed"></a>
+    <a href="#">1.3<input type="checkbox" id = "completed"></a>
+  </div>
+</div> 
 
 </body>
 </html>
