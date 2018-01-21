@@ -4,24 +4,51 @@
 		<script type="text/javascript">
 			//init object globally
 			var objImage= null;
+            var obstacle= null;
+            /*var myGameArea = {
+    		canvas : document.createElement("canvas"),
+    				start : function() {
+       		 			this.canvas.width = 480;
+        				this.canvas.height = 270;
+        				this.context = this.canvas.getContext("2d");
+        				document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        				this.interval = setInterval(updateGameArea, 20);        
+    					},
+    				stop : function() {
+        				clearInterval(this.interval);
+    					},    
+    				clear : function() {
+        			this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}*/
+       
 			function init(){
-				objImage=document.getElementById("image1");				
+				objImage=document.getElementById("user");				
 				objImage.style.position='relative';
 				objImage.style.left='0px';
 				objImage.style.top='0px';
                 objImage.setAttribute("width", "80");
             	objImage.setAttribute("height", "75");
                 objImage.speed= 0;
-			}
-            /*function init2(){
-            	obstacle=document.getElementById("image2");
-                objImage.style.position='relative';
-				objImage.style.left='0px';
-				objImage.style.top='0px';
-                objImage.setAttribute("width", "80");
-            	objImage.setAttribute("height", "75");*/
+                /*objImage.hitBottom = function() {
+        							var rockbottom = myGameArea.canvas.height - this.height;
+          							if (objImage.style.top > rockbottom) {
+            								objImage.style.top = rockbottom;
+        									}
+      									}
+									}*/
+                obstacle=document.getElementById("obstacle");
+                obstacle.style.position='relative';
+				obstacle.style.left='0px';
+				obstacle.style.top='0px';
+                obstacle.setAttribute("width", "80");
+            	obstacle.setAttribute("height", "75");
                 
-			function getKeyAndMove(e){				
+			}
+      
+                
+			function getKeyAndMove(e){
+            	//myGameArea.start();
 				var key_code=e.which||e.keyCode;
 				switch(key_code){
 					case 37: //left arrow key
@@ -72,11 +99,13 @@
              objImage.speed=objImage.speed-1;
             }
 			window.onload=init;
+            
 		</script>
 	</head>
 
 	<body onkeydown='getKeyAndMove(event)' background="http://static1.squarespace.com/static/5852eb51e4fcb548e8e909e4/t/586ba7c91b631b210f738df2/1483450335675/Background+Grid.png">
 		<h2><font color="white">Use Arrow keys to move object left, top, right and down. To increase speed press enter and to slow down press shift</font></h2>
-		<img id="image1" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Sphere-with-blender.png" alt="includehelp.com"/>
+		<img id="user" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Sphere-with-blender.png">
+        <img id="obstacle" src="https://vignette.wikia.nocookie.net/runescape2/images/4/40/Cube_detail.png/revision/latest?cb=20111119163948">
 	</body>
 </html>
